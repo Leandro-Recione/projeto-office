@@ -30,7 +30,6 @@ upadate(@Param('id') id: number, @Body() updateNoteDto: UpdateNoteDto){
 @Delete(':id')
 delete(@Param('id') id: number ){
     return this.notesService.delete(id);
-        return { mensagem: "Nota excluída com sucesso"};
 }
 
 }

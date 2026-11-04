@@ -4,6 +4,7 @@ import { AppService } from './app.service.js';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { NotesModule } from '../notes/notes.module.js';
+import { TaskModule } from '../task/task.module.js';
 
 @Module({
   imports: [
@@ -28,7 +29,8 @@ import { NotesModule } from '../notes/notes.module.js';
       }),
     }),
 
-NotesModule ],
+NotesModule,
+TaskModule ],
   providers: [AppService],
   controllers: [AppController]
 })
