@@ -1,115 +1,172 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🏢 Projeto Office
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+**Projeto Office** é uma aplicação web de produtividade desenvolvida para centralizar ferramentas de organização pessoal em um único ambiente. O sistema permite gerenciar tarefas, criar anotações, acompanhar atividades e utilizar ferramentas de controle de tempo.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+O projeto foi desenvolvido utilizando NestJS, TypeScript e TypeORM no backend, com uma interface construída em HTML, CSS e JavaScript.
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🚀 Funcionalidades
 
-## Project setup
+- **Dashboard:** painel com indicadores e gráficos de produtividade.
+- **Gerenciamento de tarefas:** criação, edição, consulta e exclusão de tarefas.
+- **Controle de atividades:** acompanhamento do status de conclusão das tarefas.
+- **Calendário:** visualização e organização de tarefas por data.
+- **Anotações:** criação, edição e organização de notas.
+- **Relógio:** visualização de horário em tempo real.
+- **Cronômetro:** controle de tempo com registro de voltas.
+- **Temporizador:** configuração de contagens regressivas com aviso sonoro.
 
-```bash
-$ npm install
+## 🛠️ Tecnologias utilizadas
+
+| Tecnologia | Utilização |
+|---|---|
+| Node.js | Ambiente de execução |
+| NestJS | Framework backend |
+| TypeScript | Linguagem de programação |
+| TypeORM | Mapeamento objeto-relacional |
+| MariaDB | Banco de dados |
+| HTML5 | Estrutura da interface |
+| CSS3 | Estilização |
+| JavaScript | Interatividade |
+| Chart.js | Construção de gráficos |
+
+## 📂 Estrutura do projeto
+
+```text
+projeto-office/
+│
+├── frontend/
+│   └── index.html
+│
+├── src/
+│   ├── app/
+│   │
+│   ├── notes/
+│   │   ├── dto/
+│   │   ├── entity/
+│   │   ├── notes.controller.ts
+│   │   ├── notes.module.ts
+│   │   └── notes.service.ts
+│   │
+│   ├── task/
+│   │   ├── dto/
+│   │   ├── entiy/
+│   │   ├── task.controller.ts
+│   │   ├── task.module.ts
+│   │   └── task.service.ts
+│   │
+│   └── main.ts
+│
+├── .env
+├── package.json
+└── README.md
 ```
 
-## Compile and run the project
+## ⚙️ Instalação e execução
+
+### Pré-requisitos
+
+- Node.js
+- npm
+- MariaDB ou MySQL
+
+### 1. Clone o repositório
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone URL_DO_REPOSITORIO
 ```
 
-## Run tests
+### 2. Entre na pasta do projeto
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+cd projeto-office
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### 3. Instale as dependências
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm install
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### 4. Configure as variáveis de ambiente
 
-## Observability
+Crie um arquivo `.env` na raiz do projeto:
 
-In production applications, observability is essential for understanding how your system behaves, detecting issues early, and maintaining reliable performance.
+```env
+DB_TYPE=mariadb
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+DB_DATABASE=projeto_office
+```
 
-[NestJS Observe](https://observe.nestjs.com) automatically instruments your NestJS application, giving you deep visibility into your system with minimal setup:
+Configure as credenciais conforme seu ambiente e crie previamente o banco de dados.
 
-- **Distributed tracing:** Follow requests across services and understand how they flow through your system.
-- **Waterfall analysis:** Visualize request execution and identify slow operations, bottlenecks, and unexpected delays.
-- **Performance analysis:** Analyze application performance in real time and quickly pinpoint areas that need optimization.
-- **Metrics:** Track key application and infrastructure metrics to understand system health and performance trends.
-- **Logging:** Centralize and correlate logs with traces and other telemetry to make debugging easier.
-- **Error tracking:** Detect errors quickly and investigate their root causes with the surrounding context.
-- **SLA monitoring:** Track service-level objectives and identify when your application is approaching or exceeding defined thresholds.
-- **Alarms and alerts:** Set up alerts for critical errors, performance degradation, SLA violations, and other anomalies so your team can react quickly.
+### 5. Execute a aplicação
 
-## Resources
+```bash
+npm run start:dev
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+A aplicação estará disponível em:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Auto-instrument your application with [NestJS Observer](https://observer.nestjs.com). Distributed tracing, metrics, and logging made easy. Error tracking and performance monitoring for your NestJS applications.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```text
+http://localhost:5050
+```
 
-## Support
+## 🔌 Endpoints da API
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Tarefas
 
-## Stay in touch
+| Método | Endpoint | Descrição |
+|---|---|---|
+| GET | `/task` | Listar tarefas |
+| GET | `/task/:id` | Buscar tarefa |
+| POST | `/task` | Criar tarefa |
+| PUT | `/task/:id` | Atualizar tarefa |
+| DELETE | `/task/:id` | Excluir tarefa |
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Anotações
 
-## License
+| Método | Endpoint | Descrição |
+|---|---|---|
+| GET | `/notes` | Listar anotações |
+| GET | `/notes/:id` | Buscar anotação |
+| POST | `/notes` | Criar anotação |
+| PUT | `/notes/:id` | Atualizar anotação |
+| DELETE | `/notes/:id` | Excluir anotação |
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-# projeto_office
+## 🏗️ Arquitetura
+
+O backend utiliza a arquitetura modular do NestJS, organizando as responsabilidades da aplicação em componentes independentes.
+
+- **Modules:** organização e integração dos módulos.
+- **Controllers:** gerenciamento das requisições HTTP.
+- **Services:** implementação das operações e regras de negócio.
+- **Entities:** representação das entidades do banco de dados.
+- **DTOs:** definição dos dados recebidos pela aplicação.
+
+A persistência dos dados é realizada por meio do TypeORM, integrado ao banco de dados MariaDB.
+
+## 📌 Melhorias futuras
+
+- [ ] Implementar autenticação de usuários.
+- [ ] Adicionar sistema de permissões.
+- [ ] Implementar documentação com Swagger.
+- [ ] Ampliar a cobertura de testes.
+- [ ] Melhorar a organização e personalização das anotações.
+- [ ] Implementar novas ferramentas de produtividade.
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+**Leandro Recione**
+
+Desenvolvedor com foco em Back-End, interessado em arquitetura de software, desenvolvimento de APIs e construção de aplicações utilizando TypeScript, NestJS e Java.
+
+---
+
+*Projeto desenvolvido para estudo e aprimoramento de habilidades em desenvolvimento de software.*
