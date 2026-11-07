@@ -1,4 +1,4 @@
-import { Body, Injectable } from '@nestjs/common';
+import { Body, Injectable, NotFoundException } from '@nestjs/common';
 import { Task } from './entiy/task-entity.js';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -13,8 +13,10 @@ findAllTask(){
     return this.taskRepository.find();
 }
 
-findOneTask(id: number){
-    return this.taskRepository.findOneBy({ id });
+async findOneTask(id: number){
+    const task = await this.taskRepository.findOneBy({ id });
+        if (!task) throw new NotFoundException(`Nota ${id} não encontrada`);
+          return task;
 }
 
 async createTask(dto: CreateTaskDto){

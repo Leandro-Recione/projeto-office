@@ -9,27 +9,27 @@ constructor(private readonly notesService: NotesService){}
 
 @Get()
 findAll(){
-    return this.notesService.findAll();
+    return this.notesService.findAllNotes();
 }
 
 @Get(':id')
 findOne(@Param('id') id: number){
-    return this.notesService.findOne(id);
+    return this.notesService.findOneNote(id);
 }
 
 @Post()
 create(@Body() createNoteDto: CreateNoteDto){
-return this.notesService.create(createNoteDto);
+return this.notesService.createNote(createNoteDto);
 }
 
 @Put(':id')
 upadate(@Param('id') id: number, @Body() updateNoteDto: UpdateNoteDto){
-    return this.notesService.update(id, updateNoteDto);
+    return this.notesService.updateNote(id, updateNoteDto);
 }
 
 @Delete(':id')
 delete(@Param('id') id: number ){
-    return this.notesService.delete(id);
+    return this.notesService.deleteNote(id);
 }
 
 }

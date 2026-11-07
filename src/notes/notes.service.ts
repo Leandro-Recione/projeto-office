@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Notes } from './entity/note-entity.js';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -9,27 +9,29 @@ import { UpdateNoteDto } from './dto/update-note-dto.js';
 export class NotesService {
     constructor(@InjectRepository(Notes) private readonly notesRepository: Repository<Notes>){}
 
-findAll(){
+findAllNotes(){
     return this.notesRepository.find();
 }
 
-findOne(id: number){
-    return this.notesRepository.findOneBy({ id });
+async findOneNote(id: number){
+    const note = await this.notesRepository.findOneBy({ id });
+        if (!note) throw new NotFoundException(`Nota ${id} não encontrada`);
+  return note;
 }
 
-async create(dto: CreateNoteDto){
+async createNote(dto: CreateNoteDto){
     const note = this.notesRepository.create(dto);
         return await this.notesRepository.save(note);
 }
 
-async update(id: number, dto: UpdateNoteDto){
-    await this.findOne(id);
+async updateNote(id: number, dto: UpdateNoteDto){
+    await this.findOneNote(id);
         await this.notesRepository.update(id, dto);
-            return this.findOne(id);
+            return this.findOneNote(id);
 }
 
-async delete(id: number){
-    await this.findOne(id);
+async deleteNote(id: number){
+    await this.findOneNote(id);
         await this.notesRepository.delete(id);
             return { mensagem:'Nota excluída com sucesso!'};
 }
